@@ -5,9 +5,9 @@ import numpy as np
 def main():
     st.subheader("Veri Girişi")
     
-    column_names = st.text_input("Sütun İsimleri (virgülle ayırın)", "Sütun1, Sütun2, Sütun3,Sütun4")
+    column_names = st.text_input("Sütun İsimleri (virgülle ayırın)", "Sütun1, Sütun2")
     column_names = [col.strip() for col in column_names.split(",")]
-    all_alternatives_input = st.text_area("Alternatif İsimleri (her satır bir alternatif)", "Alternatif1\nAlternatif2\nAlternatif3\nAlternatif4")
+    all_alternatives_input = st.text_area("Alternatif İsimleri (her satır bir alternatif)", "Alternatif1\nAlternatif2")
     all_alternatives = [alt.strip() for alt in all_alternatives_input.split("\n")]
     data = pd.DataFrame(index=all_alternatives, columns=column_names)
 
@@ -17,7 +17,7 @@ def main():
             data.at[alt, col] = value
 
     st.write("Oluşturulan DataFrame:", data)
-    weights_input = st.text_input("Sütun Ağırlıkları (virgülle ayırın)", "0.25, 0.15, 0.15, 0.10, 0.15, 0.20,0.10,0.10")
+    weights_input = st.text_input("Sütun Ağırlıkları (virgülle ayırın)", "0.25, 0.15")
     weights = [float(w.strip()) for w in weights_input.split(",")]
     fayda_sutunlari = st.multiselect("Fayda Sütunlarını Seçin", column_names)
     maliyet_sutunlari = st.multiselect("Maliyet Sütunlarını Seçin", column_names)
