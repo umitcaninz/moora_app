@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 
 def main():
+    st.title("MOORA YÖNTEMİ İLE EN İYİ ALTERNATİF SEÇİMİ")
     st.subheader("Veri Girişi")
     
     column_names = st.text_input("Sütun İsimleri (virgülle ayırın)", "Sütun1, Sütun2")
